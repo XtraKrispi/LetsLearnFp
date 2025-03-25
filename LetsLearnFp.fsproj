@@ -3,8 +3,13 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
-  <ItemGroup>
+  <ItemGroup><Compile Include="TypeProviders.fs" />
     <Compile Include="Types.fs" />
     <Compile Include="Program.fs" />        
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharp.Data" Version="6.6.0" />
+    <PackageReference Include="Npgsql" Version="9.0.3" />
+    <PackageReference Include="SqlProvider" Version="1.4.12" />
   </ItemGroup>
 </Project>

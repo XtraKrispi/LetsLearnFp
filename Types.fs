@@ -55,3 +55,7 @@ let rec myMap fn =
     function
     | [] -> []
     | x :: rest -> fn x :: myMap fn rest
+
+// Next time: syntax (indentation, comments, etc)
+// common data types (Option, Result, Task, Async)
+// Computation Expressions, Type Providers and SAFE Stack (Wordle)
