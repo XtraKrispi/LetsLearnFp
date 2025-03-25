@@ -13,12 +13,14 @@ let myList = [ 1; 2; 3; 4 ] |> List.map (fun x -> x * 2) |> List.sum
 type MyService = { blah: int; hey: string }
 
 let getAllUsers (repository: MyService) (accountId: int) : int list = [ 1; 2; 3 ]
+// This is a comment
+(*
+This is a block comment
+*)
 
 let computation =
     let myService = { blah = 0; hey = "test" }
-
     let blah: (int * int) = 3, 4
-
     let x = 123 |> getAllUsers myService |> List.map (fun y -> y * 2) |> List.sum
     0
 
@@ -55,6 +57,19 @@ let rec myMap fn =
     function
     | [] -> []
     | x :: rest -> fn x :: myMap fn rest
+
+let safeDivide a b = if b <> 0 then Some(a / b) else None
+
+open FSharp.Data
+open FSharpx.Option
+
+let mySeq x =
+    maybe {
+        let! a = safeDivide 4 5
+        let! b = safeDivide 6 7
+        return! safeDivide a b
+    }
+
 
 // Next time: syntax (indentation, comments, etc)
 // common data types (Option, Result, Task, Async)
